@@ -1,5 +1,6 @@
 {
   "name": "erikgall/menus",
+  "version": "1.0.0",
   "description": "MyBarn Menu Package",
   "minimum-stability": "dev",
   "license": "proprietary",
