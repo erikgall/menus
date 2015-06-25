@@ -1,0 +1,6 @@
+suites:
+    main:
+        namespace: EGALL\Menus\Src
+        psr4_prefix: EGALL\Menus\Src
+        src_path: src
+        spec_prefix: spec
