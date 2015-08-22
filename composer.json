@@ -1,0 +1,24 @@
+{
+  "name": "erikgall/menus",
+  "description": "MyBarn menu manager for the laravel framework.",
+  "authors": [
+    {
+      "name": "Erik Galloway",
+      "email": "erik@mybarnapp.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "EGALL\\Menus": "src/"
+    },
+    "files": [
+    ]
+  }
+}
