@@ -43,9 +43,9 @@ class Link {
    * @param string $text
    * @param string $url
    * @param array $attributes
-   * @param null $childContainerClass
+   * @param string $childContainerClass
    */
-  public function __construct($text, $url, array $attributes = [], $childContainerClass = '') {
+  public function __construct($text, $url, array $attributes = [], $childContainerClass = 'treeview-menu') {
 
     $this->text = $text;
 
