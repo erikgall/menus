@@ -84,7 +84,7 @@ class MenuItem {
   /**
    * Set the menu item's link
    *
-   * @return void
+   * @param string $url
    */
   private function setLink($url) {
     $this->link = new Link($this->title, $url);
