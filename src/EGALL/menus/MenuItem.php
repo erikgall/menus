@@ -74,9 +74,10 @@ class MenuItem {
     $this->manager = $manager;
     $this->title = $title;
     $this->attributes = $attributes;
+
     $this->pid = $pid;
-    $this->setLink();
     $this->setID($manager);
+    $this->setLink($url);
 
   }
 
@@ -85,8 +86,8 @@ class MenuItem {
    *
    * @return void
    */
-  private function setLink() {
-    $this->link = new Link($this->title, $this->url);
+  private function setLink($url) {
+    $this->link = new Link($this->title, $url);
   }
 
   /**
