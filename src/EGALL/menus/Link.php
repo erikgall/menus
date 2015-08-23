@@ -199,7 +199,7 @@ class Link {
       $html .= "glphicon glpyphicon-{$icon}\">";
     }
 
-    $html .= "</i>";
+    $html .= "</i> ";
 
     return $html;
   }
