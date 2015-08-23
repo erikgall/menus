@@ -144,7 +144,7 @@ class MenuItem {
    */
   public function hasChildren() {
 
-    if  (count($this->manager->whereParent($this->id))) {
+    if (count($this->manager->whereParent($this->id))) {
       return true;
     }
 
