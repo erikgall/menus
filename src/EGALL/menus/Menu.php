@@ -93,7 +93,7 @@ class Menu {
   public function whereParent($parent = null) {
 
     return array_filter($this->menu, function ($item) use ($parent) {
-      return ($item->getPid() === $parent) ? true : false;
+      return ($item->getPID() === $parent) ? true : false;
     });
 
   }
@@ -123,7 +123,7 @@ class Menu {
    */
   public function render($type = 'ul', $pid = NULL) {
 
-    $items = '';
+    $items = "";
 
     $element = in_array($type, ['ul', 'ol']) ? 'li' : $type;
 
@@ -131,21 +131,21 @@ class Menu {
 
       $items .= "\n<{$element}{$this->parseAttributes($item->attributes())}>";
 
-      if (!is_null($item->link->url)) {
-        $items .= "\n\t<a href=\"{$item->link->url}\"{$this->parseAttributes($item->link->attributes)}>";
-        $items .= $item->link->text;
+      if (!is_null($item->link->getURL())) {
+        $items .= "\n\t<a href=\"{$item->link->getURL()}\"{$this->parseAttributes($item->link->attributes())}>";
+        $items .= $item->link->getText();
         $items .= "</a>";
       }
       else {
-        $items .= $item->link->text;
+        $items .= $item->link->getText();
       }
 
       if ($item->hasChildren()) {
 
         $items .= "\n\t<{$type}";
         $items .= $type == 'ul' ? " class=\"{$item->link->childContainerClass}\">" : ">";
-        $items .= "\t\t" . $this->render($type, $item->getId());
-        $items .= "</{$type}>";
+        $items .= $this->render($type, $item->getId());
+        $items .= "\n</{$type}>";
 
       }
 
@@ -188,6 +188,32 @@ class Menu {
   }
 
   /**
+   * Parse an elements attributes into HTML.
+   *
+   * @param array $attributes
+   * @return string
+   */
+  public function parseAttributes(array $attributes = []) {
+
+    $html = [];
+
+    foreach ($attributes as $key => $val) {
+
+      if (is_numeric($key)) {
+        $key = $val;
+      }
+
+      $element = (!is_null($val)) ? "{$key}=\"{$val}\"" : null;
+
+      $element === null OR $html[] = $element;
+
+    }
+
+    return count($html) > 0 ? ' '.implode(' ', $html) : '';
+
+  }
+
+    /**
    * Count the number of menu items added.
    *
    * @return int
