@@ -33,7 +33,7 @@ class Link {
   protected $url;
 
   /**
-   * The containter class for a child menu item.
+   * The container class for a child menu item.
    *
    * @var string
    */
