@@ -196,7 +196,7 @@ class Link {
       $html .= "fa fa-{$icon}\">";
     }
     else {
-      $html .= "glphicon glpyphicon-{$icon}\">";
+      $html .= "glyphicon glyphicon-{$icon}\">";
     }
 
     $html .= "</i> ";
