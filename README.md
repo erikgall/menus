@@ -1,6 +1,7 @@
 # Menu/Item Manager for Laravel 5.1
 
-```$menu = $menus->build('siteMenu', function ($m) {
+```
+$menu = $menus->build('siteMenu', function ($m) {
 
       $m->add('MAIN NAVIGATION', ['class' => 'header']);
 
